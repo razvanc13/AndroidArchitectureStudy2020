@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ArchitectureExample</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_check_connection">Please check your connection</string>
+    <string name="retry">Retry</string>
+    <string name="github_android_repositories">Github Android repositories</string>
+    <string name="repository_details">Repository details</string>
+    <string name="readme">README</string>
+    <string name="details_language">language: %s</string>
+    <string name="details_watchers">watchers: %d</string>
+    <string name="details_forks">forks: %d</string>
+    <string name="details_open_issues">%d open issues</string>
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray">
+
+        <LinearLayout
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/paddingSizeX2"
+            android:paddingEnd="@dimen/paddingSizeX2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/back_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/paddingSizeX2"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_back_black_36dp" />
+
+            <TextView
+                android:id="@+id/repository_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/repository_details"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSizeL" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/title_bar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/paddingSizeX1"
+                    android:background="@drawable/drawable_container_square_white"
+                    android:padding="@dimen/paddingSizeX1">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repo Name"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeL"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/full_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repo full/Name"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/name" />
+
+                    <TextView
+                        android:id="@+id/language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/paddingSizeX1"
+                        android:text="@string/details_language"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/full_name" />
+
+                    <TextView
+                        android:id="@+id/watchers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="watchers: 1516"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/language" />
+
+                    <TextView
+                        android:id="@+id/forks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="forks: 156"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/watchers" />
+
+                    <TextView
+                        android:id="@+id/branch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="master"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintBottom_toBottomOf="@id/watchers"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/language" />
+
+                    <TextView
+                        android:id="@+id/issues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="141 open issues"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintBottom_toBottomOf="@id/forks"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/watchers" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/paddingSizeX1"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintTop_toBottomOf="@id/forks" />
+
+                    <TextView
+                        android:id="@+id/readme_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/paddingSizeX1"
+                        android:text="@string/readme"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                    <TextView
+                        android:id="@+id/readme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/paddingSizeX1"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/textSizeM"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/readme_title" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/readme_title">
+
+                        <androidx.core.widget.ContentLoadingProgressBar
+                            android:id="@+id/loading"
+                            style="?android:attr/progressBarStyleLarge"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="96dp"
+                            android:indeterminate="true"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/failed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/something_went_wrong"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/please_check_connection"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="15sp" />
+
+                            <Button
+                                android:id="@+id/retry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:padding="32dp"
+                                android:text="@string/retry"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
